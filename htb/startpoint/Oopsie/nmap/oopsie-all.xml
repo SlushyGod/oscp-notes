@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Sat Aug 28 10:42:25 2021 as: nmap -p- -oA nmap/oopsie-all -Pn 10.10.10.28 -->
+<nmaprun scanner="nmap" args="nmap -p- -oA nmap/oopsie-all -Pn 10.10.10.28" start="1630165345" startstr="Sat Aug 28 10:42:25 2021" version="7.80" xmloutputversion="1.04">
+<scaninfo type="connect" protocol="tcp" numservices="65535" services="1-65535"/>

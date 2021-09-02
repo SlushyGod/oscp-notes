@@ -1,0 +1,4 @@
+# Nmap 7.80 scan initiated Sat Aug 28 10:54:59 2021 as: nmap -sF -oA nmap/oopsie-filter -Pn 10.10.10.28
+Host: 10.10.10.28 ()	Status: Up
+Host: 10.10.10.28 ()	Status: Up
+# Nmap done at Sat Aug 28 10:54:59 2021 -- 1 IP address (1 host up) scanned in 0.12 seconds

@@ -1,0 +1,39 @@
+To edit your hosts file `nano /etc/hosts`
+
+When looking at websites for anything interesting, try to touch everything, go to each folder and see if there is possibly anything
+Also make sure to read the text, sometimes there are hints in there
+For websites, if there is a new directory then you should check it, prob wouldnt hurt to enumerate it as well
+
+Make sure and be careful to read everything and take everything in
+Try not to miss important enumeration pieces
+
+
+Things I need to learn:
+how does virtual hosting work?
+
+Add directory to path:
+export PATH="$HOME/bin:$PATH"
+
+DONT use tools that you haven't already tested out, you want want to garuntee you cant access the service vs your tool being broken
+
+Sometimes it helps to re-do things that you prev did, maybe you missed something, or something changed
+
+when testing something, make sure that you put it in a state that you are sure it is in, repition to make sure it is in that state always helps
+
+if a custom tool doesnt seem to work, reference other tools to see what you are doing wrong
+
+try different ports for reverse shells, like common ports, sometimes firewalls only open certain ports
+
+IF CUSTOM TOOLS DONT WORK, TRY TOOLS THAT ARE KNOWN TO WORK
+
+Good priv esc techniques - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md
+
+When you get creds, use them on EVERYTHING
+
+Always TRY EVERYTHING even if you think its a bit farfetched, just as long as you are stuck
+
+mysql cli cheat sheet -> https://book.hacktricks.xyz/pentesting/pentesting-mysql
+
+need to learm about linux groups, should know everything about the user that you are logged in as, what is ID, GID, GROUPS, Etc.
+
+make sure to understand your tools, also unless you read everything, dont assume something has been checked

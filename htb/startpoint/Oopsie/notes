@@ -1,0 +1,87 @@
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 61:e4:3f:d4:1e:e2:b2:f1:0d:3c:ed:36:28:36:67:c7 (RSA)
+|   256 24:1d:a4:17:d4:e3:2a:9c:90:5c:30:58:8f:60:77:8d (ECDSA)
+|_  256 78:03:0e:b4:a1:af:e5:c2:f9:8d:29:05:3e:29:c9:f2 (ED25519)
+80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+|_http-title: Welcome
+
+
+Web server
+- Has a cdn-cgi folder??
+
+There is very poor management of cookies, as well as poor authentication
+Custom script for ID brute force lets us see the super admin account # is 86575
+
+Uploading a file, doesnt seem to do any sortve checks
+file is at /uploads/shell.php
+
+When trying to connect with a reverse shell, the connection establishes, but then gets killed immediately
+- the process might be getting killed?? need to spawn a new process and then have that connect
+- custom reverse shell through php didnt work
+- using pentest monkey 'staging' reverse shell to get a reverse shell -> https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
+- got the flag
+
+Priv Esc
+- 'cat'ing out the database we find some credentials ('localhost','robert','M3g4C0rpUs3r!','garage') for a mysql database
+- trying to connect to mysql database with the client didnt work
+- did a full nmap port scan, there isnt a port for mysql as far as I can tell
+- Used those creds to ssh into robert's account
+- Couldnt download linpeas
+- Used scp to move linpeas over to the vuln box
+- weiht linpeas we see that there is a mysql server, its just blocked off by the firewall rule
+- mysql --help shows us that the mysql cli is installed!
+- mysql localhost --password=M3g4C0rpUs3r! gets us a connection
+- used a cheat sheet to possibly update the root user's password? 'MyNewPass'
+
+- linpeas saw some interesting files
+  - /bin/fusermount -> seems to have an exploit for it?
+  - /usr/lib/eject/dmcrypt-get-device -> could be nothing
+  - /usr/bin/bugtracker -> probably something
+  - /usr/lib/snapd/snap-confine
+  - /usr/bin/at
+
+Table Data:
++------+--------+-------------+-------------------------+
+| id   | access | name        | email                   |
++------+--------+-------------+-------------------------+
+|   13 |  57633 | Peter       | peter@qpic.co.uk        |
+|   23 |  28832 | Rafol       | tom@rafol.co.uk         |
+|    4 |   8832 | john        | john@tafcz.co.uk        |
+|   30 |  86575 | super admin | superadmin@megacorp.com |
+|    1 |  34322 | admin       | admin@megacorp.com      |
++------+--------+-------------+-------------------------+
+
++------+---------+----------+
+| id   | model   | price    |
++------+---------+----------+
+|    1 | MC-1023 | $100,240 |
+|   10 | MC-1123 | $110,240 |
+|   20 | MC-2123 | $110,340 |
++------+---------+----------+
+
++------+-------+------------------+
+| id   | name  | email            |
++------+-------+------------------+
+|    1 | Tafcz | john@tafcz.co.uk |
+|   13 | Rafol | tom@rafol.co.uk  |
+|   23 | Qpic  | peter@qpic.co.uk |
++------+-------+------------------+
+
+
+
+Look Into:
+sudo -l ?
+also su
+these were recommended from linpeas
+need to learn how to use find / function https://devhints.io/find
+need to learn about tips & tricks on manipulating and exploiting sh files
+need to understand basic linux commands
+need to understand /bin/sh
+need to understand how things like cat and basic commands find the correct binary
+
+Read these hacker tricks and try to practice them
+https://book.hacktricks.xyz/linux-unix/privilege-escalation

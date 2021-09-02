@@ -1,0 +1,6 @@
+# Nmap 7.80 scan initiated Sat Aug 28 10:54:59 2021 as: nmap -sF -oA nmap/oopsie-filter -Pn 10.10.10.28
+Nmap scan report for 10.10.10.28
+Host is up (0.00029s latency).
+All 1000 scanned ports on 10.10.10.28 are closed
+
+# Nmap done at Sat Aug 28 10:54:59 2021 -- 1 IP address (1 host up) scanned in 0.12 seconds

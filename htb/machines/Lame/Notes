@@ -1,0 +1,24 @@
+21 - FTP:
+- vsftpd 2.3.4, which has a possible vulnerability
+  - Cant seem to exploit this
+
+22 - SSH:
+- OpenSSH 4.7p1, doesnt seem vulnerable
+
+139/tcp - netbios-ssn Samba smbd 3.X - 4.X
+445/tcp - netbios-ssn Samba smbd 3.X - 4.X
+
+Looking at SMB enumeration - https://0xdf.gitlab.io/2018/12/02/pwk-notes-smb-enumeration-checklist-update1.html
+- nmblookup, can be installed with sudo apt install samba-common-bin
+- smbmap
+- need to checkout enum4linux
+
+What I learned:
+- When you find a new protocol, learn all of it, also learn all of the enumeration tools for it
+- If you encounter an error, look them up, I ran into an older version of SMB and my client kept throwing an error because of it
+- your order of attack should be to enumerate, look for vulns, keep enumerating, if there are potential vulns then try to go with that
+- Go with the easiest path and then work up to the ones that will take longer
+- when testing exploits, look for the most powerful one, i.e. the rce vulns, and then walk down if you dont have any other leads
+
+- Need to learn more about SMB enumeration
+- Also need to learn how to sort through whats useless vs useful <- this prob just comes with time

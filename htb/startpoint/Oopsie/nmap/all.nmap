@@ -1,0 +1,26 @@
+# Nmap 7.80 scan initiated Mon Aug 30 21:07:52 2021 as: nmap --min-rate 10000 -p- -oA nmap/all 10.10.10.28
+Nmap scan report for 10.10.10.28
+Host is up (0.040s latency).
+Not shown: 65516 closed ports
+PORT      STATE    SERVICE
+22/tcp    open     ssh
+80/tcp    open     http
+6150/tcp  filtered unknown
+12830/tcp filtered unknown
+15239/tcp filtered unknown
+15963/tcp filtered unknown
+25127/tcp filtered unknown
+31932/tcp filtered unknown
+31951/tcp filtered unknown
+32286/tcp filtered unknown
+33243/tcp filtered unknown
+34208/tcp filtered unknown
+39630/tcp filtered unknown
+43605/tcp filtered unknown
+45091/tcp filtered unknown
+45768/tcp filtered unknown
+47609/tcp filtered unknown
+51473/tcp filtered unknown
+64111/tcp filtered unknown
+
+# Nmap done at Mon Aug 30 21:08:07 2021 -- 1 IP address (1 host up) scanned in 15.60 seconds
