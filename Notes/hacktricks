@@ -1,0 +1,31 @@
+Notes for HackTricks => https://book.hacktricks.xyz/
+
+## - Learn more about External Recon
+    - Want to focus on OSCP boxes, not sure how effective this will be now
+    - Stuff is still super useful
+
+- SSH can do a graphical connection with '-X'
+    - can also be done with '-Y -C', it's less secure but faster
+- 0.0.0.0 means all IP addresses 
+
+## SSH Tunneling & Port Forwarding
+- can port forward a service that is only accessable on the internal network, so you can hit it with scans
+- e.x. internal dB, you can port forward 3306 and hit it with mysql scans
+- ex. try to port forward the internal dB on HTB oopsie
+- 'ssh -R 0.0.0.0:3306:127.0.0.1:3306 username@ip'
+- good way to exporse firewalled off ports
+- look at doing a port 2 port, I think you send traffic from one port to another
+- There are tricker/cooler ways to tunnel data/traffic, they don't appy to the OSCP at the moment, should come back to this later
+
+## Brute Forcing - They have a good cheat sheet => skip for now since it might not be as required for OSCP
+
+# Linux Stuff
+- "bin/sh" is actually a symbolic link to currently configured shell
+- default shell is dash, not bash, it has less functionality but is a bit faster
+- not all reverse shells work, need to try some that have already been battled tested and are more popular than a custom one
+- "2>/dev/null" 2 is the error file descriptor; > redirect output to a file; /dev/null is a file that ignores data
+
+
+## Linux Priv Esc
+- Download the priv esc cheat sheet and run through it to you learn it => https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist
+- 
