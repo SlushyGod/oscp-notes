@@ -28,4 +28,14 @@ Notes for HackTricks => https://book.hacktricks.xyz/
 
 ## Linux Priv Esc
 - Download the priv esc cheat sheet and run through it to you learn it => https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist
-- 
+- Get the OS version and search for possible kernel exploits
+- "||" logical or, if the first command returns false then it will execute the second one, logical or chain im guessing
+- look in env variables to see if there is anything interesting in them "(env || set) 2>/dev/null"
+- There is a good list of tools for kernal level exploitation [list and try tools]
+- look at sudo version to see if it is vulnerable
+- understand and lookup guides for sysetm enumeration [todo]
+- Lookup version #s of built in executables and defenses for both windows and linux
+    - linux: AppArmor, Grsecurity, Pax, ExecShield, SElinux, ALSR
+- take a look for mounted vs unmounted drives, try to mount unmounted drives
+- look at a list of software installed to look for possible vulnerablities, prob want to just let linpeas take care of this one
+

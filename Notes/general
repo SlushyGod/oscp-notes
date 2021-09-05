@@ -37,3 +37,7 @@ mysql cli cheat sheet -> https://book.hacktricks.xyz/pentesting/pentesting-mysql
 need to learm about linux groups, should know everything about the user that you are logged in as, what is ID, GID, GROUPS, Etc.
 
 make sure to understand your tools, also unless you read everything, dont assume something has been checked
+
+Cool way to get a file downloaded on machine that can't connect to outside is to setup an HTTP server and curl the file from that
+
+Run the tools often enough where you gain confidence in your tools and techniques, so that when something doesn't work, you know it's not you and your tools, its just that something is preventing it from working
