@@ -41,6 +41,31 @@ But this didn't:
 
 Inside of the sqlmap os shell, maybe its a nuance with the sql shell itself??
 
+I think its that you cant have more than 1 argument in the os-shell, so the -c can turn it all into one argument
+
+linpeas was already on there, haha so i just used it, but will need to test getting on there on my own -> can try a simple http server trick
+
+running linpeas gets us the private key
+user: postgres
+[I put the key in postgres_rsa]
+i was able to ssh using
+`ssh -i postgres_rsa postgres@10.10.10.46`
+
+cat out dashboard.php which gives us the password for postgres -> P@s5w0rd!
+
+Need to learn what a tty shell is vs others
+when you have a shell try using
+`su` -> just try to switch users
+`sudo -l` -> see if you can execute anything as sudo
+
+I assume too much, try to test the easy stuff first, like see what files you can read etc
+
+use sudo -l to see if the current user can do anything with sudo -> https://medium.com/@pettyhacks/linux-privilege-escalation-via-vi-36c00fcd4f5e
+
+not sure what was up with vi, but was able to run :!/bin/bash and create a root shell
+- Should prob just keep googling service/tool/anything interesting followed by privelege escalation
+
+Allows us to get priv esc
 
 gobuster found two pages
 index.php

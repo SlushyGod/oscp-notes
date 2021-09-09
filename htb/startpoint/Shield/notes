@@ -1,0 +1,22 @@
+port 80 doesnt really show anything, probably need to work on enumeration for this
+port 80 just looks like a default iis server page
+
+looks like there is a wordpress directory -> will need to gobuster this, also run wp-scan on it
+
+when trying to connect to mysql server, keep getting an error that the host is not allowed to connect to the server
+- looking into this more, this typically means its checking that you are root and are coming from localhost
+- maybe way to bypass?
+
+going through wpscan we see a few things, one of them is the xmlrpc.php
+
+going through the entire list we dont see many things that are exploitable
+
+take a look at the walkthrough, you are supposed to use the password from the postgres user, which doesnt make sense, but ya know
+admin:P@s5w0rd!
+
+
+gobuster:
+/wp-content (Status: 301)
+/wp-includes (Status: 301)
+/readme.html (Status: 200)
+/wp-admin (Status: 301)

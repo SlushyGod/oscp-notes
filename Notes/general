@@ -41,3 +41,5 @@ make sure to understand your tools, also unless you read everything, dont assume
 Cool way to get a file downloaded on machine that can't connect to outside is to setup an HTTP server and curl the file from that
 
 Run the tools often enough where you gain confidence in your tools and techniques, so that when something doesn't work, you know it's not you and your tools, its just that something is preventing it from working
+
+When you find credentials, try to use them on ALL services
