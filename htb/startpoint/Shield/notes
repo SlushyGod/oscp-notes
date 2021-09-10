@@ -70,6 +70,14 @@ Note: When using curl, good option is to se --data-urlencode to url encode query
 
 nc.exe can be uploaded through themes or plugins
 
+Thoughts:
+- https://hakluke.medium.com/haklukes-guide-to-hacking-without-metasploit-1bbbe3d14f901
+- https://www.hackingtutorials.org/networking/hacking-netcat-part-2-bind-reverse-shells/
+
+The reason msfvenom payloads did not work was because it was a mertepreter shell, not a normal shell
+Also the cheat sheet most likely failed because I was using /bin/sh not cmd.exe
+nc -e means execuatble for some netcat versions
+
 gobuster:
 /wp-content (Status: 301)
 /wp-includes (Status: 301)
