@@ -1,0 +1,59 @@
+<!doctype html public "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='/unauthenticated/style.css' />
+<script type='text/javascript' src='/unauthenticated/toggleview.js'></script>
+<script>
+var rowsel = new Array();
+</script>
+<script type='text/javascript' src='/unauthenticated/sorttable.js'></script>
+<meta http-equiv="Content-Type" content="text/html; Charset=iso-8859-1">
+<title></title>
+<title>Login to Webmin</title></head>
+<body bgcolor=#ffffff link=#0000ee vlink=#0000ee text=#000000    onLoad='document.forms[0].pass.value = ""; document.forms[0].user.focus()'>
+<table class='header' width=100%><tr>
+<td id='headln2l' width=15% valign=top align=left></td>
+<td id='headln2c' align=center width=70%><font size=+2></font></td>
+<td id='headln2r' width=15% valign=top align=right></td></tr></table>
+<p><center>
+
+<form class='ui_form' action='/session_login.cgi' method=post >
+<input class='ui_hidden' type=hidden name="page" value="/">
+<table class='shrinkwrapper' width=40% class='loginform'>
+<tr><td>
+<table class='ui_table' width=40% class='loginform'>
+<thead><tr class='ui_table_head'><td><b>Login to Webmin</b></td></tr></thead>
+<tbody> <tr class='ui_table_body'> <td colspan=1><table width=100%>
+<tr class='ui_table_row'>
+<td valign=top colspan=2 align=center class='ui_value'>You must enter a username and password to login to the Webmin server on <tt>10.129.1.226</tt>.</td>
+</tr>
+<tr class='ui_table_row'>
+<td valign=top  class='ui_label'><b>Username</b></td>
+<td valign=top colspan=1  class='ui_value'><input class='ui_textbox' name="user" value="" size=20  ></td>
+</tr>
+<tr class='ui_table_row'>
+<td valign=top  class='ui_label'><b>Password</b></td>
+<td valign=top colspan=1  class='ui_value'><input class='ui_password' type=password name="pass" value="" size=20  ></td>
+</tr>
+<tr class='ui_table_row'>
+<td valign=top  class='ui_label'><b> </b></td>
+<td valign=top colspan=1  class='ui_value'><input class='ui_checkbox' type=checkbox name="save" value="1"  id="save_1" > <label for="save_1">Remember login permanently?</label>
+</td>
+</tr>
+</tbody></table></td></tr></table>
+</td></tr>
+</table>
+
+<input class='ui_submit' type=submit value="Login">
+<input type=reset value="Clear">
+</form>
+</center>
+
+<script>
+if (window != window.top) {
+	window.top.location = window.location;
+	}
+</script>
+</div><p>
+<br>
+</body></html>

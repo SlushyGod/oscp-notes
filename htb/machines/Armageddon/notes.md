@@ -88,6 +88,22 @@ hmm well that password did not work...
 seems like jtr might not suppoer this cipher, but somehow found a collision for the one it 'detected' -> got baited pretty hard
 
 
+good link for hashcat -> https://hashcat.net/wiki/doku.php?id=example_hashes
+good to see if yourformat is supported
+
+`hashcat -a 0 -m 7900 -o cracked.txt hash.txt ../../../tools/lists/rockyou.txt`
+get the password booboo
+
+-> need to get updated versions of tools
+-> stuck with outdated versions because of sudo apt
+
+Going through linpeas:
+user password token for database.php 'pass' => '$S$DAK00p3Dkojkf4O/UizYxenguXnjv',
+sudo -l => (root) NOPASSWD: /usr/bin/snap install *
+- so what im thinking is I can make a snap app in local directory that basically calls bash, but should be with root priveleges
+- just search convert bash script to snap
+- can't seem to make a snap package because im in a vm -> need to find a better/faster way to build one of these
+
 Note:
 If an exploit doesnt work and its been verified on exploit-db, then should prob look at another avenue or exploit
 Dont stay too long on something that isnt working, chances if it isnt working then it might not be the solution
