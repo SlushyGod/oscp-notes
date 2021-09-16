@@ -2,9 +2,6 @@
 |_http-server-header: Apache/2.4.18 (Ubuntu)
 |_http-title: Site doesn't have a title (text/html)
 
-
-
-
 2222/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.2 (Ubuntu Linux; protocol 2.0)
 | ssh-hostkey: 
 |   2048 c4:f8:ad:e8:f8:04:77:de:cf:15:0d:63:0a:18:7e:49 (RSA)
@@ -22,3 +19,11 @@ What I learned
 - You need to really learn about the service/protocol and some of the nuances
 - Maybe look at installing the service to learn more about it??
 - Also when dealing with apache, its common to look for scripts in the cgi-bin folder
+- Should prob run gobuster with -f option from now on
+- when attacking directories, try over adding extensions than under adding, also make sure you know which extension it will most likely be
+
+cgi-bin we go ahead and test shell shock "also because the box is called shocker"
+
+Things to do:
+Should look more into shell shock and why this vulnerability exists, as well as how to find it on the server
+- honestly if the extension is .sh you should check for shell shock
