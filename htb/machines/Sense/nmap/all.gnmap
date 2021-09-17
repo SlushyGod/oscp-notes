@@ -1,0 +1,4 @@
+# Nmap 7.80 scan initiated Thu Sep 16 21:08:49 2021 as: nmap -sC -sV -p- -oA nmap/all 10.129.222.161
+Host: 10.129.222.161 ()	Status: Up
+Host: 10.129.222.161 ()	Ports: 80/open/tcp//http//lighttpd 1.4.35/, 443/open/tcp//ssl|http//lighttpd 1.4.35/	Ignored State: filtered (65533)
+# Nmap done at Thu Sep 16 21:11:56 2021 -- 1 IP address (1 host up) scanned in 186.73 seconds

