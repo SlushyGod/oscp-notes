@@ -35,3 +35,24 @@ If SSL is being used, view the cert that is being used to see if you can learn a
 burpsuite has a right click option to copy as a curl command
 
 sometimes creds that say "company defaults, password here, extra password, yadadada" if it doesnt work then try default password. Needless to say this is more CTFy, but you have a username to go with brute forcing the password (why yould you change the username and not the password? if anything its the opposite)
+
+eventually gobuster gets us an interesting file:
+/system-users.txt
+####Support ticket###
+
+Please create the following user
+
+
+username: Rohit
+password: company defaults
+
+Also the username was not capitalized
+company defaults? trying basic paswords like password, admin, root, tried pfsense default password which worked
+
+So you can login through rohit:pfsense
+
+we get that the pfsense version is v2.1.3
+which we could try php/webapps/43560.py
+- had already looked into using this but it didnt credentials
+
+- this exploit gives us instant root on the machine, so that was pretty easy
