@@ -1,2 +1,5 @@
 Execute  http server in current directory
 python3 -m http.server 8000
+
+NEED TO PUT REVERSE SHELL COMMANDS IN HERE
+ALSO PUT TTY SHELL UPGRADE IN HERE
