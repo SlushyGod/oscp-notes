@@ -1,6 +1,7 @@
 1. Kick of nmap scans
     - First do a normal scan with default scripts and specify output `nmap -sC -sV -oA nmap/[box name] [ip address]` which does the first 1000 ports
     - After that is done you can kick off scans for all ports to see if there are any other services
+    - Try to use these scans to discover the OS, check to see if there are any major vulnerabilities for it
 
 2. Use data from ports to do a general lookup of potential vulnerabilities
 

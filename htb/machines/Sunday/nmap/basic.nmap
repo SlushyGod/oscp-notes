@@ -1,0 +1,19 @@
+# Nmap 7.80 scan initiated Sun Oct 24 22:14:20 2021 as: nmap -sC -sV -oA nmap/basic 10.129.244.250
+Warning: 10.129.244.250 giving up on port because retransmission cap hit (10).
+Nmap scan report for 10.129.244.250
+Host is up (0.098s latency).
+Not shown: 992 closed ports
+PORT     STATE    SERVICE        VERSION
+79/tcp   open     finger         Sun Solaris fingerd
+|_finger: No one logged on\x0D
+111/tcp  open     rpcbind        2-4 (RPC #100000)
+1089/tcp filtered ff-annunc
+1234/tcp filtered hotline
+3369/tcp filtered satvid-datalnk
+3814/tcp filtered neto-dcs
+3971/tcp filtered lanrevserver
+7443/tcp filtered oracleas-https
+Service Info: OS: Solaris; CPE: cpe:/o:sun:sunos
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Oct 24 22:23:55 2021 -- 1 IP address (1 host up) scanned in 575.62 seconds

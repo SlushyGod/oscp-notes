@@ -1,0 +1,4 @@
+# Nmap 7.80 scan initiated Sun Oct 24 22:14:20 2021 as: nmap -sC -sV -oA nmap/basic 10.129.244.250
+Host: 10.129.244.250 ()	Status: Up
+Host: 10.129.244.250 ()	Ports: 79/open/tcp//finger//Sun Solaris fingerd/, 111/open/tcp//rpcbind//2-4 (RPC #100000)/, 1089/filtered/tcp//ff-annunc///, 1234/filtered/tcp//hotline///, 3369/filtered/tcp//satvid-datalnk///, 3814/filtered/tcp//neto-dcs///, 3971/filtered/tcp//lanrevserver///, 7443/filtered/tcp//oracleas-https///	Ignored State: closed (992)
+# Nmap done at Sun Oct 24 22:23:55 2021 -- 1 IP address (1 host up) scanned in 575.62 seconds
