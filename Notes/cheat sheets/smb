@@ -16,3 +16,9 @@ nmap --script smb-vuln* -p 139,445 [ip]
 
 
 Really good to try and list out the SMB
+
+https://0xdf.gitlab.io/2018/12/02/pwk-notes-smb-enumeration-checklist-update1.html
+
+- nmblookup, can be installed with sudo apt install samba-common-bin
+- smbmap
+- need to checkout enum4linux

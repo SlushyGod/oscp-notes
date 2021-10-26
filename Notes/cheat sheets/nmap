@@ -12,6 +12,7 @@ Important flags:
 -sU is good for UDP scans it seems, yet to see it work
 -O is good for OS detection
 --min-rate [packets/sec]
+-A aggresive scan
 
 Scripts:
 nmap -sV --script=http-php-version -> enumerate php version

@@ -45,3 +45,20 @@ Run the tools often enough where you gain confidence in your tools and technique
 When you find credentials, try to use them on ALL services
 
 When priv escelating, get the OS version and ALWAYS look at it for possible vulnerabilities
+
+
+
+- When you find a new protocol, learn all of it, also learn all of the enumeration tools for it
+- If you encounter an error, look them up, I ran into an older version of SMB and my client kept throwing an error because of it
+- your order of attack should be to enumerate, look for vulns, keep enumerating, if there are potential vulns then try to go with that
+- Go with the easiest path and then work up to the ones that will take longer
+- when testing exploits, look for the most powerful one, i.e. the rce vulns, and then walk down if you dont have any other leads
+
+- Need to learn more about SMB enumeration
+- Also need to learn how to sort through whats useless vs useful <- this prob just comes with time
+
+You can get a good guess of the OS version by looking at the services:
+OpenSSH 7.2p2 Ubuntu 4ubuntu2.2, where 7.2p2 is the versioning and 4ubuntu2.2 is the patch
+Look into OpenSSH 7.2p2 Ubuntu, to try and get information, quick google search gets them:
+https://launchpad.net/ubuntu/+source/openssh/1:7.2p2-4ubuntu2.2
+We can get a lot of information just from that
