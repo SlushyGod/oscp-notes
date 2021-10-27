@@ -11,6 +11,11 @@ Next you can go ahead and get to just brute force it by using the below command,
 `john-the-ripper zip.hashes --show`
 
 
+To crack /etc/shadow and /etc/passwd files you first need to prep them first
+`unshadow passwd shadow > passcopy`
+
+Auto detect, go ahead and start cracking
+`john-the-ripper --wordlist=/home/slushygod/Documents/oscp-notes/tools/lists/rockyou.txt ./passcopy`
 
 ToDo:
 Should look more into how JTR extracts the "non-hash" and uses that for future use

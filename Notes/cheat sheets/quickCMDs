@@ -6,3 +6,7 @@ ALSO PUT TTY SHELL UPGRADE IN HERE
 
 Find suids in group hype, remove errors
 find / -group hype -perm /4000 2>/dev/null
+-user root <- look for the root user
+
+Execute scripts without +x permission
+cat script.sh | bash

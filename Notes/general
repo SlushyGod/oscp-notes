@@ -62,3 +62,14 @@ OpenSSH 7.2p2 Ubuntu 4ubuntu2.2, where 7.2p2 is the versioning and 4ubuntu2.2 is
 Look into OpenSSH 7.2p2 Ubuntu, to try and get information, quick google search gets them:
 https://launchpad.net/ubuntu/+source/openssh/1:7.2p2-4ubuntu2.2
 We can get a lot of information just from that
+
+When trying passwords, try the machine name as the password
+
+when looking at htb, check out the tag under information, it gives a slight hint on how to attack the box
+
+uname -a -> good at getting os
+same as cat /etc/release
+
+Get used to going ahead and trying to crack /etc/passwd files if you can read them
+
+/etc/passwd is always readable by anyone, /etc/shadow is usually only readable by the root user
