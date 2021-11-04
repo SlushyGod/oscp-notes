@@ -16,3 +16,6 @@ Important flags:
 
 Scripts:
 nmap -sV --script=http-php-version -> enumerate php version
+
+--max-retries 1 to try and speed -p- scans
+ - you can also use 0 to make it even faster

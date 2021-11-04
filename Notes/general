@@ -73,3 +73,6 @@ same as cat /etc/release
 Get used to going ahead and trying to crack /etc/passwd files if you can read them
 
 /etc/passwd is always readable by anyone, /etc/shadow is usually only readable by the root user
+
+when using bash scripts, just go ahead and add the shebang line for bash
+`#!/bin/bash`, some systems might be older and not recognize what you are trying to execute
